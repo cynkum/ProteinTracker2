@@ -41,6 +41,18 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnFragment = (Button) findViewById(R.id.btnFragment);
 
+        Button btnList = (Button) findViewById(R.id.btnList);
+
+        Button btnKelola = (Button) findViewById(R.id.btnManajemen);
+
+        btnKelola.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent i = new Intent(MainActivity.this,MainKelolaActivity.class);
+                startActivity(i);
+            }
+        });
+
         btnLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -61,6 +73,38 @@ public class MainActivity extends AppCompatActivity {
             Log.d("ProteinTracker", savedInstanceState.getString("abc"));//biar kalo dirotate layoutnya ga hancur
             //mau naruh di Lognya Android Studio
         }
+
+        Button btnMahasiswa = (Button) findViewById(R.id.btnMahasiswa);
+
+//        btnLayout.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                Intent i = new Intent(MainActivity.this,Main2Activity.class);
+//                startActivity(i);
+//            }
+//        });
+
+        btnMahasiswa.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,Main4FragmentActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        if (savedInstanceState != null) {
+            Log.d("ProteinTracker", savedInstanceState.getString("abc"));//biar kalo dirotate layoutnya ga hancur
+            //mau naruh di Lognya Android Studio
+        }
+
+        btnList.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     ;
